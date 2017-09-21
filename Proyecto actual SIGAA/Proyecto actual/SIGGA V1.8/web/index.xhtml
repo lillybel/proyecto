@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"></meta>
+    <title>SIGAA</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"></link>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet"></link>
+    <!-- Hoja Style -->
+    <link rel="stylesheet" type="text/css" href="css/cssindex.css"></link>
+    </h:head>
+    
+    <h:body>
+ <!--Navbar-->
+            <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar">
+                    <div class="container">
+                        <button  class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <img  src="img/sena.png" width="180px" height="50px"></img>                  
+                        <div  class="collapse navbar-collapse" id="navbarNav1">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.xhtml">Inicio <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#about">Información</a>
+                                </li>
+                            </ul>              
+                        </div>
+                    </div>
+           </nav>
+    <!--Mask-->
+            <div  class="view hm-black-strong">
+                <div class="full-bg-img flex-center">
+                  <!--  <div class="row"></div>
+                    <div class="row col-md-8"></div>
+                    <div class="row col-md-4"> -->
+                        <h1  class="h1-responsive wow fadeInDown" data-wow-delay="0.2s">Bienvenidos!</h1>
+
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalLogin">Iniciar Sesión</button>
+                        </div>
+                </div>
+        <!--    </div> -->
+    <!-- Modal-->
+            <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog cascading-modal" role="document">
+                <!--Content-->
+                    <div class="modal-content">
+                        <!--Header-->
+                            <div class="modal-header green  white-text">
+                                <h4 class="title"><i class="fa fa-user"></i> Inicio de Sesión</h4>
+                                    <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Cancelar">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                            </div>
+                            <!--Body-->
+                            <h:form id="loginForm">
+                            <p:growl id="msg" showDetail="true" life="3000" />
+                            <div class="modal-body">
+                                <center><img  src="img/login.png" width="180px" height="160px"></img></center>
+                                <div class="md-form form-sm">
+                                    <i class="fa fa-envelope prefix"></i>                    
+                                    <p:inputText id="username" value="#{loginBean.userPerson}" class="form-control" ></p:inputText>
+                                    <label for="form30">Nombre de Usuario</label>
+                                    <p:spacer></p:spacer>
+                                    <p:message for="username" ></p:message>
+                                </div>
+                                <div class="md-form form-sm">
+                                    <i class="fa fa-lock prefix"></i>
+                                    <p:password id="password" value="#{loginBean.passwordPerson}" feedback="false" class="form-control"></p:password>
+                                    <label for="form31">Contraseña</label>
+                                    <p:spacer></p:spacer>
+                                    <p:message for="password"></p:message>
+                                    <p:spacer></p:spacer>
+                                </div>
+                                <div class="text-center mt-2">
+                                    <p:commandButton action="#{loginBean.loginProject()}" value="Iniciar Sesión" update="loginForm" ajax="true" class="btn btn-outline-success"></p:commandButton>                  
+                                </div>
+                            </div>
+                            </h:form>    
+                            <!--Footer-->
+                            <div class="modal-footer">
+                                <div class="options text-center text-md-right mt-1">
+                                    <p>¿Olvidaste tu <a href="#">contraseña?</a></p>
+                                </div>
+                                    <button type="button" class="btn btn-outline-danger waves-effect ml-auto" data-dismiss="modal">Cancelar</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+    <div class="container">
+        <div class="divider-new">
+            <h2 class="h2-responsive wow fadeIn" data-wow-delay="0.2s">Información</h2>
+        </div>
+        <!--Section: About-->
+        <section id="about" class="text-center wow fadeIn" data-wow-delay="0.2s">
+            <p>Con una cobertura de 117 centros de formación a lo largo y ancho de Colombia, la oferta educativa del SENA está al alcance de todos los colombianos y se acomoda a las necesidades de cada región. Así mismo, existe una amplia oferta de programas virtuales para estudiar sin salir de casa.</p>
+            <p>Todos los procesos de formación que ofrece el SENA son gratuitos y garantizan las herramientas adecuadas para que las personas puedan vincularse al mercado laboral</p>
+        </section>
+        <!--Section: About-->
+        <div class="divider-new">
+            <h2 class="h2-responsive wow fadeIn">Notas</h2>
+        </div>
+        <!--Section: Best features-->
+        <section id="best-features">
+            <div class="row">
+                <!--First columnn-->
+                <div class="col-lg-3">
+                    <!--Card-->
+                    <div class="card wow fadeIn">
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(25).jpg" class="img-fluid" alt=""></img>
+                            <a>
+                                <div class="mask"></div>
+                            </a>
+                        </div>
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block text-center">
+                            <!--Title-->
+                            <h4 class="card-title">Cumpleaños de Sena  60 años</h4>                          
+                            <!--Text-->
+                            <p class="card-text">Hace 60 años nació el Sena, y durante todo ese tiempo se ganó el aprecio de los colombianos por ser una de las pocas entidades que llegan a regiones apartadas y porque ha formado a varias generaciones.</p>
+                        </div>
+                        <!--/.Card content-->
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--First columnn-->
+                <!--Second columnn-->
+                <div class="col-lg-3">
+                    <!--Card-->
+                    <div class="card wow fadeIn" data-wow-delay="0.2s">
+
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(14).jpg" class="img-fluid" alt=""></img>
+                            <a>
+                                <div class="mask"></div>
+                            </a>
+                        </div>
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block text-center">
+                            <!--Title-->
+                            <h4 class="card-title">Sena gana oro y plata en competencias</h4>                           
+                            <!--Text-->
+                            <p class="card-text">La selección Colombia de WorldSkills, conformada por seis aprendices y cinco expertos del Sena, llegó a las competencias de habilidades más importante de Shanghái</p>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--Second columnn-->
+                <!--Third columnn-->
+                <div class="col-lg-3">
+                    <!--Card-->
+                    <div class="card wow fadeIn" data-wow-delay="0.4s">
+
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(21).jpg" class="img-fluid" alt=""></img>
+                            <a>
+                                <div class="mask"></div>
+                            </a>
+                        </div>
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block text-center">
+                            <!--Title-->
+                            <h4 class="card-title">¡Anote! El Sena tiene más de 100.000</h4>
+                            
+                            <!--Text-->
+                            <p class="card-text">Todos los ciudadanos interesados en acceder a un cupo en el Sena podrán inscribirse de forma gratuita a esta oferta de formación presencial titulada</p>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--Third columnn-->
+                <!--First columnn-->
+                <div class="col-lg-3">
+                    <!--Card-->
+                    <div class="card wow fadeIn" data-wow-delay="0.6s">
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(37).jpg" class="img-fluid" alt=""></img>
+                            <a>
+                                <div class="mask"></div>
+                            </a>
+                        </div>
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block text-center">
+                            <!--Title-->
+                            <h4 class="card-title">Sena cofinanciará proyectos de formalización especializadat</h4>
+                           
+                            <!--Text-->
+                            <p class="card-text">La entidad dispondrá de $30.000 millones para capacitar a los trabajadores en diferentes disciplinas. Las inscripciones cierran el 14 de marzo.</p>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--First columnn-->
+            </div>
+        </section>
+        <!--/Section: Best features-->
+    </div>
+    <!--/ Main container-->
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only">
+        <!--Footer Links-->
+        <div class="container-fluid">
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-3 offset-lg-1 hidden-lg-down">
+                    <h5 class="title">GESTIÓN APRENDICES</h5>
+                    <p> Sistema para la gestión de aprendices el cual permite un control para diligenciar el formato de asistencia para los aprendices SENA.</p>      
+                </div>                
+                <center><img src="img/logoSena3.png" width="120px" height="120px" style="margin-left: 800px" ></img></center> 
+                <!--/.First column-->
+            </div>
+        </div>
+        <!--/.Footer Links-->
+        <!--Call to action-->
+        <div class="call-to-action">
+            <h4>Para mas información de la intitución SENA:</h4>
+            <ul>
+                <li>
+                    <h5>Visite las siguientes páginas </h5></li>
+                <li><a target="_blank" href="http://oferta.senasofiaplus.edu.co/sofia-oferta/" class="btn btn-default" rel="nofollow">Sofia plus</a></li>
+                <li><a target="_blank" href="http://www.senavirtual.edu.co/" class="btn btn-default" rel="nofollow">BlackBoard</a></li>
+            </ul>
+        </div>
+        <!--/.Call to action-->     
+    </footer>
+    <!--/.Footer-->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Animations init-->
+    <script>
+        new WOW().init();
+    </script>     
+    </h:body>
+</html>
+

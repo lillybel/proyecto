@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+         <meta charset="utf-8"></meta>
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+         <meta http-equiv="x-ua-compatible" content="ie=edge"></meta>
+    <title>Cargue fichas</title>
+    <!-- CSS ESTILOS  -->
+    <link href="assets/css/style.css" rel="stylesheet"></link>
+    </h:head>
+    <h:body class="navbar-fixed sidebar-nav fixed-nav">
+          <header class="navbar">
+           <div class="container-fluid">
+                <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>  
+                <ul class="nav navbar-nav hidden-md-down">
+                    <li class="nav-item">
+                      <a  href="admin.xhtml"> <img  src="img/logonegros.png" width="80px" height="50px"/></a>
+                    </li>  
+                    <li class="nav-item">
+                        <a class="nav-link navbar-toggler layout-toggler" href="FrmGestionAsistencia.xhtml"><i class="icon-calendar" ></i></a>
+                    </li>                   
+                </ul>
+                                <ul class="nav navbar-nav pull-right hidden-md-down">
+                    <li class="nav-item">
+                        <a class="nav-link">                           
+                            <img src="assets/img/avatars/6.jpg" class="img-avatar" alt=""/>                                                      
+                        </a>
+                    </li>    
+                    <li class="nav-item">
+                        <p class="success">Usuario: #{loginBean.userPerson}</p>    
+                    </li>
+                    <li class="nav-item">
+                        <p></p>
+                    </li>
+                    <li class="nav-item ">                       
+                        <h:form>                                      
+                                <p:commandButton class="btn btn-success-outline" icon="ui-icon-extlink" action="#{loginBean.logout}" value="Cerrar Sesión" ajax="false"></p:commandButton>
+                        </h:form>                       
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!--MENU NAVEGACION-->
+          <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">
+                        <strong>
+                        Administrador
+                        </strong>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueAprendices.xhtml"><i class="icon-energy"></i>Cargue Aprendices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueInstructores.xhtml"><i class="icon-energy"></i>Cargue Instructor</a>
+                    </li>
+                                       
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueProgramas.xhtml"><i class="icon-energy"></i> Cargue Programas </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueFichas.xhtml"><i class="icon-energy"></i> Cargue Fichas</a>
+                    </li>
+                    <li class="nav-title">
+                        <strong>
+                        Gestiones
+                        </strong>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestiones.xhtml"><i class="icon-note"></i>Gestiones Básicas</a>
+                    </li>            
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionProgramaFormacion.xhtml"><i class="icon-note"></i>  Programas </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionFichas.xhtml"><i class="icon-note"></i>  Fichas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionAprendiz.xhtml"><i class="icon-note"></i>  Aprendices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionResultadosAprendizajee.xhtml"><i class="icon-note"></i>  Resultados de aprendizaje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionUsuarios.xhtml"><i class="icon-note"></i>  Usuarios</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionNotas.xhtml"><i class="icon-note"></i> Notas</a>
+                    </li>
+                    <li class="nav-title">
+                        Asistencia
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionAsistencia.xhtml"><i class="icon-speedometer"></i> Asistencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmReportes.xhtml"><i class="icon-pie-chart"></i> Reportes</a>
+                    </li>       
+                </ul>
+            </nav>
+        </div>
+        <main class="main">
+            <ol class="breadcrumb m-b-0">
+                <li><a href="admin.xhtml">Inicio</a></li>
+                <li class="active">Cargue Fichas</li>
+            </ol>
+            <div class="container-fluid">
+                <div class="animated fadeIn">
+                    <div class="row">
+                       <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="icon-speedometer"></i> Formulario - Cargue Fichas
+                                    <div class="card-actions">
+                                        <a >
+                                            <small class="text-muted"><img src="img/logoSena_1.png" width="22px" height="22px"></img></small>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-block collapse in">     
+                                    <!--PROGRAMACION FORMULARIO CON PRIMEFACES-->
+                                     <a href="FrmGestionCargo.xhtml"> <button type="button" class="btn btn-success"><i class="icon-note"></i>Descargar plantilla excel</button></a>  
+                                     <a href="FrmgAsignarCargo.xhtml"><button type="button" class="btn btn-success"><i class="icon-note"></i>Subir plantilla excel</button></a>
+              
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    <footer class="footer ng-scope">
+    </footer>
+    </h:body>
+</html>

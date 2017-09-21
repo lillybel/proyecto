@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+         <meta charset="utf-8"></meta>
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+         <meta http-equiv="x-ua-compatible" content="ie=edge"></meta>
+    <title>Gestión usuarios</title>
+    <!-- CSS ESTILOS  -->
+    <link href="assets/css/style.css" rel="stylesheet"></link>
+    </h:head>
+    <h:body class="navbar-fixed sidebar-nav fixed-nav">
+          <header class="navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>  
+                <ul class="nav navbar-nav hidden-md-down">
+                    <li class="nav-item">
+                      <a  href="admin.xhtml"> <img  src="img/logonegros.png" width="80px" height="50px"/></a>
+                    </li>  
+                    <li class="nav-item">
+                        <a class="nav-link navbar-toggler layout-toggler" href="FrmGestionAsistencia.xhtml"><i class="icon-calendar" ></i></a>
+                    </li>                   
+                </ul>
+                                <ul class="nav navbar-nav pull-right hidden-md-down">
+                    <li class="nav-item">
+                        <a class="nav-link">                           
+                            <img src="assets/img/avatars/6.jpg" class="img-avatar" alt=""/>                                                      
+                        </a>
+                    </li>    
+                    <li class="nav-item">
+                        <p class="success">Usuario: #{loginBean.userPerson}</p>    
+                    </li>
+                    <li class="nav-item">
+                        <p></p>
+                    </li>
+                    <li class="nav-item ">                       
+                        <h:form>                                      
+                                <p:commandButton class="btn btn-success-outline" icon="ui-icon-extlink" action="#{loginBean.logout}" value="Cerrar Sesión" ajax="false"></p:commandButton>
+                        </h:form>                       
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!--MENU NAVEGACION-->
+                    <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">
+                        <strong>
+                        Administrador
+                        </strong>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueAprendices.xhtml"><i class="icon-energy"></i>Cargue Aprendices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueInstructores.xhtml"><i class="icon-energy"></i>Cargue Instructor</a>
+                    </li>
+                                       
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueProgramas.xhtml"><i class="icon-energy"></i> Cargue Programas </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueFichas.xhtml"><i class="icon-energy"></i> Cargue Fichas</a>
+                    </li>
+                    <li class="nav-title">
+                        <strong>
+                        Gestiones
+                        </strong>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestiones.xhtml"><i class="icon-note"></i>Gestiones Básicas</a>
+                    </li>            
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionProgramaFormacion.xhtml"><i class="icon-note"></i>  Programas </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionFichas.xhtml"><i class="icon-note"></i>  Fichas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionAprendiz.xhtml"><i class="icon-note"></i>  Aprendices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionResultadosAprendizajee.xhtml"><i class="icon-note"></i>  Resultados de aprendizaje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionUsuarios.xhtml"><i class="icon-note"></i>  Usuarios</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionNotas.xhtml"><i class="icon-note"></i> Notas</a>
+                    </li>
+                    <li class="nav-title">
+                        Asistencia
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionAsistencia.xhtml"><i class="icon-speedometer"></i> Asistencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmReportes.xhtml"><i class="icon-pie-chart"></i> Reportes</a>
+                    </li>       
+                </ul>
+            </nav>
+        </div>
+        <main class="main">
+            <ol class="breadcrumb m-b-0">
+                <li><a href="admin.xhtml">Inicio</a></li>
+               <!-- <li><a href="FmrGestiones.xhtml">Gestiones</a></li> -->
+                <li class="active">Usuarios</li>
+            </ol>
+            <div class="container-fluid">
+                <div class="animated fadeIn">
+                    <div class="row">
+                       <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="icon-speedometer"></i> Formulario - Usuarios
+                                    <div class="card-actions">
+                                        <a >
+                                            <small class="text-muted"><img src="img/logoSena_1.png" width="22px" height="22px"></img></small>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-block collapse in">     
+                                    <!--PROGRAMACION FORMULARIO CON PRIMEFACES-->
+                                    <!-- FORMULARIO PROGRAMACION PRIMEFACES -->
+                                     <h:form id="frm">
+                                         <label><strong>Recuerde diligenciar todos los capos para que su registro sea exitoso.</strong></label>
+                                        <fieldset class="form-group">  
+                                        <label>Identificacion de la persona</label>
+                                        <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-bell"></i></span>
+                                        <h:inputText class="form-control" value="#{personBean.person.idPerson}" />
+                                        </div>
+                                        <small class="text-muted">Ejemplo: 1247582269 </small>
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                        <label>Nombre de la persona </label>
+                                        <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-note"></i></span>
+                                        <h:inputText class="form-control" value="#{personBean.person.namePerson}" />
+                                        </div>
+                                        <small class="text-muted">Ejemplo: Daniela Alejandra Muñoz Fiquitiva</small>
+                                        </fieldset>    
+                                        <fieldset class="form-group">
+                                        <label>Usuario  de la persona </label>
+                                        <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-note"></i></span>
+                                        <h:inputText class="form-control" value="#{personBean.person.userPerson}" />
+                                        </div>
+                                        <small class="text-muted">Ejemplo:danielasena.12</small>
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                        <label>Contraseña del usuario </label>
+                                        <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-note"></i></span>
+                                        <h:inputText  class="form-control" value="#{personBean.person.passwordPerson}" />
+                                        </div>
+                                        <small class="text-muted">Ejemplo: ****** </small>
+                                        </fieldset>
+                                          <fieldset class="form-group">
+                                        <label>E-Mail del usuario </label>
+                                        <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-note"></i></span>
+                                        <h:inputText class="form-control" value="#{personBean.person.email}" />
+                                        </div>
+                                        <small class="text-muted">Ejemplo: DanielaMu@misena.edu.co</small>
+                                        </fieldset>
+                                         
+                                         <p:selectOneMenu value="#{personBean.person.idState}">
+                                            <f:selectItems value="#{stateBean.list}" itemValue="#{stateBean.state.idState}" />
+                                      </p:selectOneMenu>
+                                        <!--BOTONES DE REGISTRAR Y LISTAR-->
+                                        <h:commandButton class="btn btn-success" value="Registrar" actionListener="#{personBean.registrar()}"/>
+                                        <p:commandButton class="btn" value="Listar" actionListener="#{personBean.listar()}" update="data"/>
+                                           <br></br>
+                                           <br></br>
+                                           <!--TABLA DE DATOS -->
+                                           <p:dataTable id="data" value="#{personBean.lstPerson}" var="person"  rows="5" paginator="true">
+                                               <p:column  headerText="Identificacion del usuario">
+                                                   <p:outputLabel value="#{person.idPerson}"/>                              
+                                               </p:column>
+                                               <p:column  headerText="Nombre de la persona">
+                                                   <p:outputLabel value="#{person.namePerson}"/>                              
+                                               </p:column>
+                                               <p:column  headerText="Usuario de la persona">
+                                                   <p:outputLabel value="#{person.userPerson}"/>                              
+                                               </p:column>
+                                                 <p:column  headerText="Contraseña de la persona ">
+                                                     <p:outputLabel value="#{person.passwordPerson}"/>                              
+                                               </p:column>
+                                               <p:column  headerText="Estado de la persona">
+                                                   <p:outputLabel value="#{person.idState}"/>                              
+                                               </p:column>
+                                               <p:column  headerText="E-Mail de la persona">
+                                                   <p:outputLabel value="#{person.email}"/>                              
+                                               </p:column>
+                                               <p:column  headerText="Modificar">
+                                                   <p:commandLink value="Modificar" actionListener="#{personBean.leerID(person)}" oncomplete="PF('wdlgDatos').show();" update=":dlgDatos"/>                              
+                                               </p:column>
+                                               <p:column  headerText="Eliminar">
+                                                   <p:commandLink value="Eliminar" actionListener="#{personBean.eliminar(person)}" update="data"/>                              
+                                               </p:column>
+                                           </p:dataTable>
+                                       </h:form>
+                                    <!-- VENTANA MODAL -->
+                                       <p:dialog header="Datos" widgetVar="wdlgDatos" id="dlgDatos">
+                                           <h:form>
+                                           <label>Identificación  </label>
+                                           <h:inputText  class="form-control" value="#{personBean.person.idPerson}" /> 
+                                           <label>Nombre Completo </label>
+                                           <h:inputText  class="form-control" value="#{personBean.person.namePerson}" />  
+                                           <label>Nombre Usuario </label>
+                                           <h:inputText  class="form-control" value="#{personBean.person.userPerson}" /> 
+                                           <label>Contraseña </label>
+                                           <h:inputText  class="form-control" value="#{personBean.person.passwordPerson}" /> 
+                                           <label>Email </label>
+                                           <h:inputText  class="form-control" value="#{personBean.person.email}" />  
+                                           <label>Estado del Aprendiz </label>
+                                           
+                                           <p:selectOneMenu value="#{personBean.person.idState}" filter="true" filterMatchMode="contains">
+                                            <f:selectItems value="#{stateBean.list}" itemValue="#{stateBean.state.idState}" />
+                                           </p:selectOneMenu> 
+                                           
+                                           
+                                           <p:commandButton value="Modificar" actionListener="#{personBean.modificar()}" oncomplete="PF('wdlgDatos').hide();" update=":frm" />
+                                          
+     
+                                           </h:form>
+                                       </p:dialog>       
+                               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    <footer class="footer ng-scope">
+    </footer>
+    </h:body>
+</html>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+         <meta charset="utf-8"></meta>
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+         <meta http-equiv="x-ua-compatible" content="ie=edge"></meta>
+    <title>Gestión resultado de aprendizaje</title>
+    <!-- CSS ESTILOS  -->
+    <link href="assets/css/style.css" rel="stylesheet"></link>
+    </h:head>
+    <h:body class="navbar-fixed sidebar-nav fixed-nav">
+          <header class="navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>  
+                <ul class="nav navbar-nav hidden-md-down">
+                    <li class="nav-item">
+                      <a  href="admin.xhtml"> <img  src="img/logonegros.png" width="80px" height="50px"/></a>
+                    </li>  
+                    <li class="nav-item">
+                        <a class="nav-link navbar-toggler layout-toggler" href="FrmGestionAsistencia.xhtml"><i class="icon-calendar" ></i></a>
+                    </li>                   
+                </ul>
+                                <ul class="nav navbar-nav pull-right hidden-md-down">
+                    <li class="nav-item">
+                        <a class="nav-link">                           
+                            <img src="assets/img/avatars/6.jpg" class="img-avatar" alt=""/>                                                      
+                        </a>
+                    </li>    
+                    <li class="nav-item">
+                        <p class="success">Usuario: #{loginBean.userPerson}</p>    
+                    </li>
+                    <li class="nav-item">
+                        <p></p>
+                    </li>
+                    <li class="nav-item ">                       
+                        <h:form>                                      
+                                <p:commandButton class="btn btn-success-outline" icon="ui-icon-extlink" action="#{loginBean.logout}" value="Cerrar Sesión" ajax="false"></p:commandButton>
+                        </h:form>                       
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!--MENU NAVEGACION-->
+                    <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">
+                        <strong>
+                        Administrador
+                        </strong>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueAprendices.xhtml"><i class="icon-energy"></i>Cargue Aprendices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueInstructores.xhtml"><i class="icon-energy"></i>Cargue Instructor</a>
+                    </li>
+                                       
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueProgramas.xhtml"><i class="icon-energy"></i> Cargue Programas </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmCargueFichas.xhtml"><i class="icon-energy"></i> Cargue Fichas</a>
+                    </li>
+                    <li class="nav-title">
+                        <strong>
+                        Gestiones
+                        </strong>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestiones.xhtml"><i class="icon-note"></i>Gestiones Básicas</a>
+                    </li>            
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionProgramaFormacion.xhtml"><i class="icon-note"></i>  Programas </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionFichas.xhtml"><i class="icon-note"></i>  Fichas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionAprendiz.xhtml"><i class="icon-note"></i>  Aprendices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionResultadosAprendizajee.xhtml"><i class="icon-note"></i>  Resultados de aprendizaje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionUsuarios.xhtml"><i class="icon-note"></i>  Usuarios</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionNotas.xhtml"><i class="icon-note"></i> Notas</a>
+                    </li>
+                    <li class="nav-title">
+                        Asistencia
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmGestionAsistencia.xhtml"><i class="icon-speedometer"></i> Asistencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrmReportes.xhtml"><i class="icon-pie-chart"></i> Reportes</a>
+                    </li>       
+                </ul>
+            </nav>
+        </div>
+        <main class="main">
+            <ol class="breadcrumb m-b-0">
+                <li><a href="admin.xhtml">Inicio</a></li>
+               <!-- <li><a href="FmrGestiones.xhtml">Gestiones</a></li> -->
+                <li class="active">Resultados de aprendizaje</li>
+            </ol>
+            <div class="container-fluid">
+                <div class="animated fadeIn">
+                    <div class="row">
+                       <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="icon-speedometer"></i> Formulario - Resultados de aprendizaje
+                                    <div class="card-actions">
+                                        <a >
+                                            <small class="text-muted"><img src="img/logoSena_1.png" width="22px" height="22px"></img></small>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-block collapse in">     
+                                    <!--PROGRAMACION FORMULARIO CON PRIMEFACES-->
+                                    <!-- FORMULARIO PROGRAMACION PRIMEFACES -->
+                                  
+                                    <h:form id="frm"> 
+                                    <p:growl id="msgs" showDetail="true" />
+                                        <label>Código del resultado de aprendizaje </label>
+                                        <h:inputText  class="form-control" value="#{resultLearningBean.resultLearning.idResultLearning}" /> 
+                                        <label>Nombre del resultado de aprendizaje </label>
+                                        <h:inputText  class="form-control" value="#{resultLearningBean.resultLearning.nameResultLearning}" /> 
+                                        <br/>
+                                        <p:outputLabel for="mask" value="Fecha Inico del Resultado :" />
+                                        <p:calendar id="mask" value="#{resultLearningBean.resultLearning.startDate}"  pattern="yyyy-MM-dd" mask="true" />
+                                        <p:outputLabel for="mask2" value="Fecha De Finilizacion del resultado:" />
+                                        <p:calendar id="mask2" value="#{resultLearningBean.resultLearning.endDate}" pattern="dd-MM-yyyy" mask="true" />                                                                  
+                                        <label>Estado del resultado</label>
+                                        <p:selectOneMenu value="#{resultLearningBean.resultLearning.idState}">
+                                            <f:selectItems value="#{stateBean.list}" itemValue="#{stateBean.state.idState}" />
+                                        </p:selectOneMenu> 
+                                        <label>Programa de Formación</label>
+                                       <p:selectOneMenu value="#{groupStudentsBean.groupStudents.idProgram}">
+                                           <f:selectItems value="#{programBean.list}" itemValue="#{programBean.program.idProgram}" />
+                                        </p:selectOneMenu><br></br>
+                                        <h:commandButton class="btn btn-success" value="Registrar" actionListener="#{resultLearningBean.registrar()}"/>
+                                        <p:commandButton class="btn" value="Listar" actionListener="#{ResultLearningBean.listar()}" update="data"/>
+                                        <!-- TABLA MUESTRA DE DATOS -->  
+                                        <p:dataTable id="data" value="#{resultLearningBean.lstResultLearning}" var="ResultLearning"  rows="5" paginator="true">
+                                               <p:column  headerText="Código del resultado de aprendizaje">
+                                                   <p:outputLabel value="#{ResultLearning.idResultLearning}"/>                              
+                                               </p:column>
+                                               <p:column  headerText="Nombre del resultado de aprendizaje">
+                                                   <p:outputLabel value="#{ResultLearning.nameResultLearning}"/>                              
+                                               </p:column>
+                                               <p:column  headerText="Fecha de inicio">
+                                                   <p:outputLabel value="#{ResultLearning.startDate}"/>                              
+                                               </p:column>
+                                               <p:column  headerText="Fecha de finalización">
+                                                   <p:outputLabel value="#{ResultLearning.endDate}"/>                              
+                                               </p:column>
+                                               <p:column  headerText="Estado">
+                                                   <p:outputLabel value="#{ResultLearning.idState}"/>                              
+                                               </p:column>
+                                                <p:column  headerText="Programa">
+                                                    <p:outputLabel value="#{ResultLearning.idProgram}"/>                              
+                                               </p:column>
+                                               <p:column  headerText="Modificar">                                                
+                                                   <p:commandLink value="Modificar"  actionListener="#{ResultLearningBean.leerID(ResultLearning)}" oncomplete="PF('wdlgDatos').show();" update=":dlgDatos"/>                              
+                                               </p:column>
+                                               <p:column  headerText="Eliminar">
+                                                   <p:commandLink value="Eliminar" actionListener="#{ResultLearningBean.eliminar(ResultLearningBean)}" update="data"/>                              
+                                               </p:column>
+                                           </p:dataTable>
+                                       </h:form>
+                                    <!-- VENTANA MODAL -->
+                                       <p:dialog header="Datos" widgetVar="wdlgDatos" id="dlgDatos">
+                                           <h:form>
+                                           <label>Código del resultado de aprendizaje  </label>
+                                           <h:inputText  class="form-control" value="#{resultLearningBean.resultLearning.idResultLearning}" /> 
+                                           <label>Nombre del resultado de aprendizaje </label>
+                                           <h:inputText  class="form-control" value="#{resultLearningBean.resultLearning.nameResultLearning}" />  
+                                           <label>Fecha de inicio </label>
+                                           <h:inputText  class="form-control" value="#{resultLearningBean.resultLearning.startDate}" /> 
+                                           <label>Fecha de finalización </label>
+                                           <h:inputText  class="form-control" value="#{resultLearningBean.resultLearning.endDate}" />  
+                                           <label>Estado del resultado </label>
+                                           <p:selectOneMenu value="#{resultLearningBean.resultLearning.idResultLearning}">
+                                            <f:selectItems value="#{stateBean.list}" itemValue="#{stateBean.state.idState}" />
+                                           </p:selectOneMenu> 
+                                           <label>Programa de Formación</label>
+                                       <p:selectOneMenu value="#{groupStudentsBean.groupStudents.idProgram}">
+                                           <f:selectItems value="#{programBean.list}" itemValue="#{programBean.program.idProgram}" />
+                                        </p:selectOneMenu><br></br>
+                                        <p:commandButton value="Modificar" actionListener="#{resultLearningBean.modificar()}" oncomplete="PF('wdlgDatos').hide();" update=":frm" />
+                                                 <p:commandButton value="Cancelar" immediate="true" />
+                                           </h:form>
+                                       </p:dialog>       
+                               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    <footer class="footer ng-scope">
+    </footer>
+    </h:body>
+</html>
